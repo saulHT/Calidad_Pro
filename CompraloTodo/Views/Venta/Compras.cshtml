@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = "/Views/Shared/_LayoutLogin.cshtml";
+    ViewData["Title"] = "Compras";
+}
+
+<h1>Compras</h1>
+
+
+<div class="container">
+    <h3>Hola @ViewBag.nombre, su lista de compras</h3>
+
+    <div >
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>N° Pedido</th>
+                        <th>Tipo de Pago </th>
+                        <th>Monto de Compra </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{int contador =1; } 
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@contador</td>
+                        @if (item.TipoPago == 1)
+                        {
+                            <td>Tarjeta De Credito</td>
+                        }
+                        else
+                        {
+                            <td>Tarjeta De Debito</td>
+                        }
+                        <td>S/ @item.montoTotal</td>
+                    </tr>
+                        contador++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

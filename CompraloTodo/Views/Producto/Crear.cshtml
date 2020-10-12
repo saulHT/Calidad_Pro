@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = "/Views/Shared/_LayoutLogin.cshtml";
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear Producto</h1>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 offset-2">
+            <form action="/producto/Crear" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label class="control-label">Categoria</label>
+                    <select class="form-control" name="idCategoria">
+                        <option>--selecciona categoria--</option>
+                        @foreach (var categoria in ViewBag.categoria)
+                        {
+                            if (categoria.id == Model.idCategoria)
+                            {
+                                <option value="@categoria.id">@categoria.nombre</option>
+                            }
+                            else
+                            {
+                                <option value="@categoria.id">@categoria.nombre</option>
+                            }
+                        }
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Nombre</label>
+                    <input class="form-control" name="nombre" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Precio</label>
+                    <input class="form-control" type="text" maxlength="6" name="precio" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Añadir Imagenes</label>
+                    <div class="col-sm-10">
+                        <div class="custom-file">
+                            <input multiple="multiple" type="file" name="imagen" class="form-control custom-file-input" />
+                            <label class="custom-file-label">selecciona imagen</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Descripcion</label>
+                    <textarea class="form-control" name="descripcion" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Estado</label>
+                    <select name="estado" class="form-control">
+                        <option selected value="True">Activo</option>
+                        <option selected value="False">Desactivo</option>
+                    </select>
+                </div>
+
+
+                <button class="btn btn-primary">Guardar</button>
+                <a class="btn btn-secondary" href="/ListaProductos/Index">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = "/Views/Shared/_LayoutLogin.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<h3>@ViewBag.usuario</h3>
+<h3>@ViewBag.id</h3>
+<h2>lista de Productos</h2>
+<br />
+<div class="row">
+    <div class="col-xs-2 text-right">
+        <a href="/Producto/Crear" class="btn btn-info">Nuevo</a>
+    </div>
+</div>
+<table class="table border">
+    <thead>
+        <tr class="table-primary">
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Estado</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.nombre</td>
+                <td>@item.precio</td>
+                <td>@item.estado</td>
+                <td>
+                    <a>Editar</a>|
+                    <a>Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+
+                    <a href="/producto/detalle?id=@item.id">
+                        <img class="card-img-top" src="~/imagen/@item.imagen" style="height:250px; width:300px;">
+                    </a>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a>@item.nombre</a>
+                        </h2>
+                        <h5>S/@item.precio</h5>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>*@
+

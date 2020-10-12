@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Crear";
+}
+
+<section class="login_box_area section-margin">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="login_box_img">
+                    <div class="hover">
+                        <h4>¿Ya tienes una cuenta ?</h4>
+                        <a class="button button-account" href="/Auth/Login">Inicia Sesion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="login_form_inner">
+                    <h3>Iniciar Sesión </h3>
+                    <form class="row login_form" action="/Usuario/Crear" method="post">
+                        <div class="col-md-12 form-group">
+                            <input class="form-control" name="nombre" placeholder="Nombre" />
+                            @Html.ValidationMessage("nombre")
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input class="form-control" name="apellido" placeholder="Apellido" />
+                            @Html.ValidationMessage("apellido")
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email" />
+                            @Html.ValidationMessage("email")
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" />
+                            @Html.ValidationMessage("password")
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <button type="submit" class="button button-register w-100">Registrarce</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

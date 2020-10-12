@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "ListarProductos";
+}
+
+<h1>ListarProductos</h1>
+
+<main class="site-main">
+    <section>
+        <div class="container">
+            <div class="row no-gutters align-items-center pt-60px">
+                <div class="col-5 d-none d-sm-block">
+                    <div class="hero-banner__img">
+                        <img class="img-fluid" src="~/imagen/hero-banner.png" />
+                    </div>
+                </div>
+                <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+                    <div class="hero-banner__content">
+                        <h4>Comprar es divertido</h4>
+                        <h1>EXPLORE NUESTRO PRODUCTOS</h1>
+                        <p>
+                            Registrate y podras vender tus productos nuevos
+                            sin pagar  facil y sencillo.
+                        </p>
+                        <a class="button button-hero " href="/Usuario/Crear">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<br />
+<br />
+<h3>Productos</h3>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6 col-xl-3">
+            <div class="card text-center card-product">
+                <div class="card-product__img">
+                    <img class="card-img" src="~/imagen/@item.imagen"/>
+                    @*<ul class="card-product__imgOverlay">
+                        <li><button><i class="ti-search"></i></button></li>
+                        <li><button><i class="ti-shopping-cart"></i></button></li>
+                        <li><button><i class="ti-heart"></i></button></li>
+                    </ul>*@
+                </div>
+                <div class="card-body">
+                    <p></p>
+                    <h4 class="card-product__title"><a href="/Producto/Detalle/@item.id">@item.nombre</a></h4>
+                    <p class="card-product__price">@item.precio</p>
+                    <p>usuario: @item.Usuario.nombre</p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

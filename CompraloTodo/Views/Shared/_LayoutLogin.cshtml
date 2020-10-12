@@ -1,0 +1,185 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CompraloTodo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.mins.css">
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/css/nouislider.min.css">
+
+
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand logo_h" href="#"><img src="~/imagen/logo.png" />COMPRALO TODO</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                            @*<li class="nav-item active"><a class="nav-link" href="/Producto/ListarProductos">Home</a></li>*@
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                   aria-expanded="false">Categoria</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Categoria</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                   aria-expanded="false">Productos</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/Producto/Index">Mis productos</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/Venta/Compras">Mis ventas</a></li>
+
+                                </ul>
+                            </li>
+
+                            @*<li class="nav-item active"><a class="nav-link" href="/Producto/Index">Productos</a></li>
+                           // <li class="nav-item active"><a class="nav-link" href="/Producto/Index">MisProductos</a></li>
+                          //  <li class="nav-item active"><a class="nav-link" href="/Venta/Compras">Mis compras</a></li>*@
+                        </ul>
+
+                        <ul class="nav navbar-nav menu_nav">
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Cuenta</a>
+                                <ul class="dropdown-menu">
+                                   
+                                   
+                                    <li class="nav-item "><a class="nav-link" href="/Auth/Logout">Salir</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+   
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+    </div>
+
+    <footer class="border-top">
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-4">
+                <br />
+                <h4 class="text-white footer_title large_title">Mision</h4>
+                <br />
+                <p>
+                    Brindar igualdad de condiciones para vender y comprar,
+                    sin importar el tamaño del emprendimiento o la empresa.
+                </p>
+                <p>
+                    Somos la compañía tecnológica de comercio electrónico líder
+                    de América Latina y nuestro propósito es democratizar
+                    el comercio y el dinero para impactar en el desarrollo de la región.
+                </p>
+            </div>
+
+
+            <div class="col-md-3">
+                <br />
+                <div class="single-footer-widget instafeed">
+                    <h4 class="text-white footer_title">Galeria</h4>
+                    <ul class="list instafeed d-flex flex-wrap">
+                        <li><img src="~/imagen/r2.jpg" /></li>
+                        <li><img src="~/imagen/r3.jpg" /></li>
+                        <li><img src="~/imagen/r7.jpg" /></li>
+                        <li><img src="~/imagen/r8.jpg" /></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <br />
+                <div class="single-footer-widget tp_widgets">
+                    <h4 class=" footer_title">Contactenos</h4>
+                    <div class="ml-40">
+                        <p class="sm-head">
+                            <span class="fa fa-location-arrow"></span>
+                            OFICINA CENTRAL
+                        </p>
+                        <p>123, Main Street, Your City</p>
+                        <p class="sm-head">
+                            <span class="fa fa-phone"></span>
+                            NÚMERO DE TELÉFONO
+                        </p>
+                        <p>
+                            +123 456 7890 <br>
+                            +123 456 7890
+                        </p>
+
+                        <p class="sm-head">
+                            <span class="fa fa-envelope"></span>
+                            CORREO ELECTRONICO
+                        </p>
+                        <p>
+                            Conpralotodo@infoexample.com <br>
+                            www.infoexample.com
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br />
+
+        <div class="container">
+
+            &copy; 2020 - CompraloTodo
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/skrollr.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+   
+
+
+</body>
+
+</html>
+
